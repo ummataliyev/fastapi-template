@@ -33,5 +33,5 @@ It provides a clean, modular structure with essential features to help new devel
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/<your-username>/fastapi-template.git
+git clone git@github.com:ummataliyev/fastapi-template.git
 cd fastapi-template
