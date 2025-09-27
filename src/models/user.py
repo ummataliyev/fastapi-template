@@ -18,9 +18,10 @@ class User(Base, IntIdPkMixin, TimestampMixin, SoftDeletionMixin):
     __tablename__ = "users"
 
     name: Mapped[str] = mapped_column(index=True)
+    email: Mapped[str] = mapped_column(unique=True, index=True)
 
     def __repr__(self) -> str:
         """
         Return a readable string representation of the User instance.
         """
-        return f"<User id={self.id} name={self.name}>"
+        return f"<User id={self.id} name={self.name} email={self.email}>"

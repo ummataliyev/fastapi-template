@@ -18,6 +18,7 @@ class UserBase(BaseModel):
         name (str): Name of the user.
     """
     name: str
+    email: str
 
     model_config = ConfigDict(from_attributes=True)
 
@@ -45,6 +46,7 @@ class UserUpdate(BaseModel):
         name (Optional[str]): Updated name of the user, if provided.
     """
     name: Optional[str] = None
+    email: Optional[str] = None
 
     model_config = ConfigDict(from_attributes=True)
 

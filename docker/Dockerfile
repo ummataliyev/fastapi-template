@@ -10,7 +10,6 @@ RUN apt-get update \
 COPY requirements.txt /app/
 RUN pip install -r requirements.txt
 
-# Copy all top-level folders so imports work
 COPY alembic.ini /app/
 COPY db /app/db
 COPY libs /app/libs
