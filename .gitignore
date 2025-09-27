@@ -1,2 +1,4 @@
 __pycache__/
 .env
+.pytest_cache__/
+.pytest_cache
