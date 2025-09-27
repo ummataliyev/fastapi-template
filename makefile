@@ -64,3 +64,7 @@ disable-mongo:
 	@echo "🛑 Disabling Mongo..."
 	docker compose -f $(DOCKER_COMPOSE_FILE) stop mongo
 	docker compose -f $(DOCKER_COMPOSE_FILE) rm -f mongo
+
+test:
+	@echo "🧪 Running unit tests with pytest..."
+	docker compose -f $(DOCKER_COMPOSE_FILE) exec fastapi pytest -v /app/src/tests

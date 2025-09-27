@@ -39,7 +39,7 @@ async def get_user_by_id(
     except ValueError:
         return response.user_not_found()
     except Exception as e:
-        return response.get_error_response(f"An error occurred: {e}")
+        return response.error(f"An error occurred: {e}")
 
 
 @router.get(
@@ -82,7 +82,7 @@ async def create_user(
         new_user = await service.create(**user_in.model_dump())
         return response.create(new_user)
     except Exception as e:
-        return response.get_error_response(f"An error occurred: {e}")
+        return response.error(f"An error occurred: {e}")
 
 
 @router.patch(
@@ -111,7 +111,7 @@ async def update_user(
     except ValueError:
         return response.user_not_found()
     except Exception as e:
-        return response.get_error_response(f"An error occurred: {e}")
+        return response.error(f"An error occurred: {e}")
 
 
 @router.delete(
@@ -135,4 +135,4 @@ async def delete_user(
     except ValueError:
         return response.user_not_found()
     except Exception as e:
-        return response.get_error_response(f"An error occurred: {e}")
+        return response.error(f"An error occurred: {e}")
